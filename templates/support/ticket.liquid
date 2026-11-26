@@ -22,9 +22,9 @@
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <!-- SOL / ORTA: Mesajlaşma Akışı (8 Cols) -->
+    <!-- LEFT / CENTER: message flow (8 cols) -->
     <main class="lg:col-span-8 space-y-6">
-      <!-- Talep Başlık Kartı -->
+      <!-- Ticket title card -->
       <div
         class="rounded-3xl border-2 shadow-2xl p-6 sm:p-8 backdrop-blur-xl"
         style="
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <!-- Mesaj Listesi -->
+      <!-- Message list -->
       <div class="space-y-6">
         {% for message in ticket.messages %}
           {% assign isCustomer = false %}
@@ -80,7 +80,7 @@
               >
             </div>
 
-            <!-- Balon -->
+            <!-- Bubble -->
             <div class="max-w-[85%]">
               <div class="flex items-center gap-2 mb-1.5 {% if isCustomer %}justify-end{% endif %}">
                 <span class="text-xs font-black {% if isCustomer %}text-purple-300{% else %}text-white{% endif %}" {% unless isCustomer %}style="color: #ffffff !important;"{% endunless %}>
@@ -116,7 +116,7 @@
         {% endfor %}
       </div>
 
-      <!-- Cevap Yazma Formu -->
+      <!-- Reply form -->
       {% if ticket.status != 'CLOSED' %}
         <div
           class="rounded-3xl border-2 shadow-2xl p-6 md:p-8 mt-8 backdrop-blur-xl"
@@ -200,7 +200,7 @@
       {% endif %}
     </main>
 
-    <!-- SAĞ: Talep Detayları Sidebar (4 Cols) -->
+    <!-- RIGHT: ticket details sidebar (4 cols) -->
     <aside class="lg:col-span-4 space-y-6">
       <div
         class="rounded-3xl border-2 shadow-2xl p-6 backdrop-blur-xl sticky top-24"
@@ -305,7 +305,7 @@
     namespace: 'SupportReplyTicket',
     theme: myTheme,
     onError: (error) => {
-      console.error('Lexical Hatası:', error);
+      console.error('Lexical error:', error);
     },
   };
 

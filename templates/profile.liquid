@@ -14,9 +14,9 @@
 {% if displayUser.username %}
   <div class="w-full max-w-[1350px] mx-auto px-4 sm:px-6 py-6 sm:py-10 min-h-[60vh]">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <!-- SOL SÜTUN: Profil Bilgileri & Menü (4 Cols) -->
+      <!-- LEFT COLUMN: profile info & menu (4 cols) -->
       <div class="lg:col-span-4 space-y-6">
-        <!-- Profil Ana Kartı -->
+        <!-- Main profile card -->
         <div
           class="rounded-3xl p-8 border-2 shadow-2xl relative overflow-hidden flex flex-col items-center text-center backdrop-blur-xl"
           style="
@@ -64,7 +64,7 @@
           </div>
         </div>
 
-        <!-- İstatistikler -->
+        <!-- Statistics -->
         <div
           class="rounded-3xl p-6 border-2 shadow-2xl backdrop-blur-xl space-y-4"
           style="
@@ -116,7 +116,7 @@
           </div>
         </div>
 
-        <!-- Navigasyon Menüsü -->
+        <!-- Navigation menu -->
         <div
           class="rounded-3xl p-6 border-2 shadow-2xl backdrop-blur-xl"
           style="
@@ -173,9 +173,9 @@
         </div>
       </div>
 
-      <!-- SAĞ SÜTUN: Tab İçerikleri (8 Cols) -->
+      <!-- RIGHT COLUMN: tab contents (8 cols) -->
       <div class="lg:col-span-8">
-        <!-- DUVAR TABI -->
+        <!-- WALL TAB -->
         <div
           id="tab-wall"
           class="tab-content block rounded-3xl p-6 sm:p-8 border-2 shadow-2xl backdrop-blur-xl"
@@ -193,7 +193,7 @@
             <span>Profil Duvarı</span>
           </h2>
 
-          <!-- Mesaj Gönderme Kutusu -->
+          <!-- Message composer -->
           {% if customer %}
             <div class="flex gap-4 mb-8">
               <div class="w-12 h-12 rounded-2xl border-2 border-primary/40 overflow-hidden shrink-0 shadow-lg" style="background: rgba(14, 9, 20, 0.8);">
@@ -229,7 +229,7 @@
             </div>
           {% endif %}
 
-          <!-- Duvar Mesajları Listesi -->
+          <!-- Wall messages list -->
           <div id="wall-messages-list" class="space-y-4">
             <div class="py-12 text-center text-gray-400 font-bold rounded-2xl border-2 border-dashed"
                  style="background: rgba(14, 9, 20, 0.4); border-color: rgba(255, 255, 255, 0.08);">
@@ -238,7 +238,7 @@
           </div>
         </div>
 
-        <!-- ENVANTER TABI -->
+        <!-- INVENTORY TAB -->
         <div
           id="tab-inventory"
           class="tab-content hidden rounded-3xl p-6 sm:p-8 border-2 shadow-2xl backdrop-blur-xl"
@@ -333,7 +333,7 @@
         });
       });
 
-      // Duvar Mesajları Mantığı
+      // Wall messages logic
       const wallContainer = document.getElementById('wall-messages-list');
       const wallInput = document.getElementById('wall-message-input');
       const btnSend = document.getElementById('btn-send-message');

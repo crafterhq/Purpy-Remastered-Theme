@@ -22,7 +22,7 @@
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <!-- SOL: Form Bilgileri (4 Cols) -->
+    <!-- LEFT: form info (4 cols) -->
     <aside class="lg:col-span-4 space-y-6">
       <div
         class="rounded-3xl border-2 shadow-2xl p-6 backdrop-blur-xl"
@@ -65,7 +65,7 @@
       </div>
     </aside>
 
-    <!-- SAĞ: Form İçeriği (8 Cols) -->
+    <!-- RIGHT: form content (8 cols) -->
     <main class="lg:col-span-8">
       <div
         class="rounded-3xl border-2 shadow-2xl p-6 sm:p-10 backdrop-blur-xl relative overflow-hidden"
@@ -80,7 +80,7 @@
         </div>
 
         {% if formDetail.isActive %}
-          <!-- Başarı Mesajı -->
+          <!-- Success message -->
           <div
             id="apply-success"
             class="hidden absolute inset-0 z-10 flex flex-col items-center justify-center p-8 text-center"
@@ -105,7 +105,7 @@
             </a>
           </div>
 
-          <!-- Hata Mesajı -->
+          <!-- Error message -->
           <div
             id="apply-error"
             class="hidden mb-6 p-4 rounded-2xl border flex items-center gap-3"

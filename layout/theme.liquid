@@ -358,7 +358,7 @@
 
               <!-- Right: Cart & User Account Actions -->
               <div class="flex items-center gap-2.5 sm:gap-3">
-                <!-- Sepet Button -->
+                <!-- Cart button -->
                 <a
                   href="/cart"
                   id="nav-cart-btn"
@@ -439,7 +439,7 @@
         class="fixed inset-y-0 left-0 z-[70] w-full sm:w-[400px] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col"
         style="background: linear-gradient(to bottom, #140c1e, #0e0914); border-right: 2px solid rgba(var(--color-primary-rgb,124,58,237),0.25);"
       >
-        <!-- Sidebar Üst: Logo + Kapat -->
+        <!-- Sidebar top: logo + close -->
         <div
           class="flex items-center justify-between p-6 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent"
           style="border-bottom: 2px solid rgba(var(--color-primary-rgb,124,58,237),0.25);"
@@ -459,7 +459,7 @@
           </button>
         </div>
 
-        <!-- Navigasyon Linkleri -->
+        <!-- Navigation links -->
         <div class="flex-1 overflow-y-auto p-6">
           <nav class="space-y-3">
             {% if settings.nav_links != blank %}
@@ -554,7 +554,7 @@
           </nav>
         </div>
 
-        <!-- Kullanıcı / Auth Bölümü -->
+        <!-- User / auth section -->
         <div class="p-6" style="border-top: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">
           {% if customer %}
             <a
@@ -694,7 +694,7 @@
           <div class="flex-1 overflow-y-auto p-6 space-y-4">
             <!-- 2-Column Grid (2x2) -->
             <div class="grid grid-cols-2 gap-3.5">
-              <!-- Profilim -->
+              <!-- My profile -->
               <a href="/profile" onclick="closeUserMenu()" class="group block cursor-pointer">
                 <div
                   class="h-28 flex flex-col items-center justify-center space-y-2 p-3 rounded-2xl border-2 transition-all duration-300 group-hover:scale-105"
@@ -712,7 +712,7 @@
                 </div>
               </a>
 
-              <!-- Cüzdanım -->
+              <!-- My wallet -->
               <a href="/wallet" onclick="closeUserMenu()" class="group block cursor-pointer">
                 <div
                   class="h-28 flex flex-col items-center justify-center space-y-2 p-3 rounded-2xl border-2 transition-all duration-300 group-hover:scale-105"
@@ -730,7 +730,7 @@
                 </div>
               </a>
 
-              <!-- Sandığım -->
+              <!-- My chest -->
               <a href="/chest" onclick="closeUserMenu()" class="group block cursor-pointer">
                 <div
                   class="h-28 flex flex-col items-center justify-center space-y-2 p-3 rounded-2xl border-2 transition-all duration-300 group-hover:scale-105"
@@ -748,7 +748,7 @@
                 </div>
               </a>
 
-              <!-- Ayarlar -->
+              <!-- Settings -->
               <a href="/profile/settings" onclick="closeUserMenu()" class="group block cursor-pointer">
                 <div
                   class="h-28 flex flex-col items-center justify-center space-y-2 p-3 rounded-2xl border-2 transition-all duration-300 group-hover:scale-105"
@@ -767,7 +767,7 @@
               </a>
             </div>
 
-            <!-- Yönetim Paneli (Yetki Varsa) -->
+            <!-- Admin panel (if permitted) -->
             {% if customer.role.permissions and customer.role.permissions.size > 0 %}
               <a
                 href="https://app.crafter.net.tr/cms/auth?websiteId={{ customer.websiteId }}&accessToken={{ customer.access_token }}&refreshToken={{ customer.refresh_token }}"
@@ -804,7 +804,7 @@
             </a>
           </div>
         {% else %}
-          <!-- Giriş Yapmamış Kullanıcı İçin -->
+          <!-- For logged-out users -->
           <div class="flex-1 flex flex-col items-center justify-center p-8 text-center space-y-4">
             <div class="w-16 h-16 rounded-2xl flex items-center justify-center border-2"
                  style="background: rgba(var(--color-primary-rgb, 124, 58, 237), 0.15); border-color: rgba(var(--color-primary-rgb, 124, 58, 237), 0.35);">
@@ -1048,11 +1048,11 @@
           </div>
         </div>
 
-        <!-- FooterCard (Ana Footer İçeriği) -->
+        <!-- FooterCard (main footer content) -->
         <div class="py-[50px] text-white" style="background-color: var(--color-surface, #1a1020);">
           <div class="px-5 max-w-[1350px] mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-8 lg:gap-y-0">
-              <!-- Site Bilgisi -->
+              <!-- Site info -->
               <div class="lg:col-span-5">
                 <div class="mb-8 lg:mb-0">
                   <h3 class="uppercase font-bold text-xl mb-[10px]" style="color: var(--color-primary);">
@@ -1067,7 +1067,7 @@
                 </div>
               </div>
 
-              <!-- Bağlantılar -->
+              <!-- Links -->
               <div class="lg:col-span-3">
                 <div class="mb-8 lg:mb-0">
                   <h3 class="uppercase font-bold text-xl mb-[10px]" style="color: var(--color-primary);">
@@ -1146,7 +1146,7 @@
                 </div>
               </div>
 
-              <!-- Sosyal Medya -->
+              <!-- Social media -->
               <div class="lg:col-span-4">
                 <div class="mb-8 lg:mb-0">
                   <h3 class="uppercase font-bold text-xl mb-[10px]" style="color: var(--color-primary);">
@@ -1214,7 +1214,7 @@
               </div>
             </div>
 
-            <!-- Alt Telif & Powered By Çubuğu -->
+            <!-- Bottom copyright & powered-by bar -->
             <div class="mt-10 pt-6 border-t" style="border-color: rgba(255,255,255,0.08);">
               <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
                 <div class="text-center md:text-left" style="color: var(--color-text-secondary);">
@@ -1281,7 +1281,7 @@
             });
           }
         })
-        .catch(err => console.error('Discord API Hatası:', err));
+        .catch(err => console.error('Discord API error:', err));
       {% endif %}
 
       // MCAPI.TR Minecraft Server Status Fetcher

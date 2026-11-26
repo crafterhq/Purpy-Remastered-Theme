@@ -49,9 +49,9 @@
 
   <!-- Main Layout -->
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <!-- SOL / ORTA: Ana İçerik (8 Cols) -->
+    <!-- LEFT / CENTER: main content (8 cols) -->
     <div class="lg:col-span-8 space-y-8">
-      <!-- Kategoriler -->
+      <!-- Categories -->
       <div>
         <h2 class="text-lg sm:text-xl font-black text-white mb-4 flex items-center gap-2.5" style="color: #ffffff !important;">
           <div class="w-8 h-8 rounded-xl flex items-center justify-center bg-primary/20 text-primary border border-primary/40">
@@ -108,7 +108,7 @@
         {% endif %}
       </div>
 
-      <!-- Son Konular -->
+      <!-- Latest topics -->
       <div>
         <h2 class="text-lg sm:text-xl font-black text-white mb-4 flex items-center gap-2.5" style="color: #ffffff !important;">
           <div class="w-8 h-8 rounded-xl flex items-center justify-center bg-primary/20 text-primary border border-primary/40">
@@ -183,7 +183,7 @@
       </div>
     </div>
 
-    <!-- SAĞ: Sidebar (4 Cols) -->
+    <!-- RIGHT: sidebar (4 cols) -->
     <aside class="lg:col-span-4 space-y-6">
       {% unless customer %}
         <div

@@ -50,7 +50,7 @@
               </div>
             {% endif %}
 
-            <!-- Görsel -->
+            <!-- Image -->
             <div class="relative w-full h-44 sm:h-56 md:h-64 overflow-hidden bg-black/40">
               <img
                 src="{% if post.featuredImage != blank %}{{ post.featuredImage }}{% else %}https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop{% endif %}"
@@ -60,7 +60,7 @@
               <div class="absolute inset-0 bg-gradient-to-t from-[#1a1020] via-transparent to-black/20"></div>
             </div>
 
-            <!-- İçerik -->
+            <!-- Content -->
             <div class="p-4 sm:p-6">
               <h2 class="text-lg sm:text-xl md:text-2xl font-black text-white line-clamp-2 group-hover:text-primary transition-colors leading-tight mb-2">
                 {{ post.title }}
@@ -73,7 +73,7 @@
                 {% endif %}
               </p>
 
-              <!-- Footer Bilgileri -->
+              <!-- Footer info -->
               <div class="flex items-center justify-between pt-4 border-t" style="border-color: rgba(255,255,255,0.06);">
                 <div class="flex items-center gap-2.5">
                   {% assign author_name = post.author.username | default: post.authorName | default: 'Yönetici' %}
@@ -130,7 +130,7 @@
       {% assign payments_list = statistic.latest.payments | default: statistics.latest.payments | default: stats.latest.payments | default: statistic.payments | default: statistics.payments | default: stats.payments %}
       {% assign top_payment = payments_list.first %}
 
-      <!-- Öne Çıkan Etkinlik / Tanıtım Banner (Spotlight) -->
+      <!-- Featured event / promo banner (spotlight) -->
       {% if settings.home.spotlight_enabled != false %}
         <div
           class="relative rounded-2xl p-5 sm:p-6 shadow-xl border-2 overflow-hidden group hover:border-primary/60 transition-all duration-300 backdrop-blur-xl"
@@ -186,7 +186,7 @@
         </div>
       {% endif %}
 
-      <!-- SupportersCard (Kredi Yükleyenler) -->
+      <!-- SupportersCard (top-up supporters) -->
       <div
         id="supporters-card-container"
         class="relative rounded-2xl p-4 sm:p-6 shadow-xl border-2 overflow-hidden"
@@ -220,7 +220,7 @@
           </div>
         </div>
 
-        <!-- Top Supporter Section (Lider / Son Destekleyen) -->
+        <!-- Top supporter section (leader / latest supporter) -->
         <div id="top-supporter-wrapper">
           {% if top_payment %}
             <div
@@ -428,7 +428,7 @@
       </div>
       <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full blur-3xl opacity-25 pointer-events-none" style="background: var(--color-primary);"></div>
 
-      <!-- Sol İçerik: Yazı & Başlıklar -->
+      <!-- Left content: text & headings -->
       <div class="relative z-10 max-w-2xl space-y-4 text-left">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider border shadow-md"
              style="background: rgba(var(--color-primary-rgb, 124, 58, 237), 0.20); border-color: rgba(var(--color-primary-rgb, 124, 58, 237), 0.45); color: var(--color-primary);">
@@ -457,7 +457,7 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <!-- IP Kopyalama Butonu -->
+          <!-- IP copy button -->
           <button
             onclick="copyIp('{{ settings.server_ip | default: 'mc.hypixel.net' }}')"
             class="inline-flex items-center justify-center gap-3 px-5 py-3.5 rounded-2xl font-bold text-xs sm:text-sm tracking-wide text-white transition-all duration-300 hover:scale-105 border-2 hover:border-emerald-500/60 cursor-pointer shadow-lg group"
@@ -473,7 +473,7 @@
         </div>
       </div>
 
-      <!-- Sağ İçerik: Görsel / Özellik Rozetleri -->
+      <!-- Right content: image / feature badges -->
       <div class="relative z-10 flex-shrink-0 w-full lg:w-auto flex justify-center">
         <div class="relative p-6 rounded-3xl border-2 backdrop-blur-xl flex flex-col items-center justify-center text-center max-w-[280px] sm:max-w-[320px] shadow-2xl"
              style="background: rgba(20, 12, 28, 0.85); border-color: rgba(var(--color-primary-rgb, 124, 58, 237), 0.30);">
@@ -513,9 +513,9 @@
       </p>
     </div>
 
-    <!-- ================= ROW 1: SOLDA SON SATIN ALIMLAR | SAĞDA MAĞAZA TANITIMI ================= -->
+    <!-- ================= ROW 1: LATEST PURCHASES ON THE LEFT | STORE PROMO ON THE RIGHT ================= -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-      <!-- SOL (7 Cols): Son Satın Alımlar -->
+      <!-- LEFT (7 cols): latest purchases -->
       <div
         class="lg:col-span-7 rounded-3xl p-6 sm:p-7 border-2 shadow-2xl flex flex-col relative overflow-hidden backdrop-blur-xl"
         style="
@@ -574,7 +574,7 @@
         </div>
       </div>
 
-      <!-- SAĞ (5 Cols): Mağaza Tanıtım Yazısı -->
+      <!-- RIGHT (5 cols): store promo text -->
       <div
         class="lg:col-span-5 rounded-3xl p-6 sm:p-8 border-2 shadow-2xl flex flex-col justify-between relative overflow-hidden backdrop-blur-xl"
         style="
@@ -624,9 +624,9 @@
       </div>
     </div>
 
-    <!-- ================= ROW 2: SOLDA DESTEK TANITIMI | SAĞDA SON KREDİ YÜKLEYENLER ================= -->
+    <!-- ================= ROW 2: SUPPORT PROMO ON THE LEFT | LATEST TOP-UPS ON THE RIGHT ================= -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-      <!-- SOL (5 Cols): Sunucu Destek & Kredi Tanıtımı -->
+      <!-- LEFT (5 cols): server support & credit promo -->
       <div
         class="lg:col-span-5 rounded-3xl p-6 sm:p-8 border-2 shadow-2xl flex flex-col justify-between relative overflow-hidden backdrop-blur-xl"
         style="
@@ -675,7 +675,7 @@
         </div>
       </div>
 
-      <!-- SAĞ (7 Cols): Kredi Yükleyenler -->
+      <!-- RIGHT (7 cols): top-up supporters -->
       <div
         class="lg:col-span-7 rounded-3xl p-6 sm:p-7 border-2 shadow-2xl flex flex-col relative overflow-hidden backdrop-blur-xl"
         style="
@@ -735,7 +735,7 @@
       </div>
     </div>
 
-    <!-- ================= ROW 3: UZUN ŞEKİLDE YENİ KATILANLAR SIRA SIRA ================= -->
+    <!-- ================= ROW 3: NEWEST MEMBERS IN A LONG ROW ================= -->
     <div
       class="rounded-3xl p-6 sm:p-8 border-2 shadow-2xl relative overflow-hidden backdrop-blur-xl"
       style="
@@ -769,7 +769,7 @@
         </a>
       </div>
 
-      <!-- Uzun Sıra Sıra Yatay Izgara (6'lı Kartlar) -->
+      <!-- Long horizontal grid row (cards of 6) -->
       <div id="signups-feed-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
         {% if signups_data.size > 0 %}
           {% for user in signups_data limit: 6 %}
@@ -831,9 +831,9 @@
           Binlerce aktif oyuncu, kesintisiz etkinlikler ve rekabet dolu dünyamızda seni bekliyoruz. Sunucu adresini kopyala veya hemen kayıt olarak aramıza katıl!
         </p>
 
-        <!-- CTA Butonları -->
+        <!-- CTA buttons -->
         <div class="flex flex-wrap items-center justify-center gap-4 pt-6">
-          <!-- IP Kopyalama Butonu -->
+          <!-- IP copy button -->
           <button
             onclick="copyIp('{{ settings.server_ip | default: 'mc.hypixel.net' }}')"
             class="relative group flex items-center gap-3.5 px-6 py-3.5 rounded-2xl border-2 transition-all duration-300 hover:scale-105 hover:border-primary cursor-pointer shadow-2xl backdrop-blur-xl h-16"
@@ -854,7 +854,7 @@
             </div>
           </button>
 
-          <!-- Discord Butonu -->
+          <!-- Discord button -->
           <a
             href="{{ settings.discord_url | default: '#' }}"
             target="_blank"
@@ -874,7 +874,7 @@
             </div>
           </a>
 
-          <!-- Kayıt / Mağaza Butonu -->
+          <!-- Sign-up / store button -->
           <a
             href="/auth/sign-up"
             class="relative group flex items-center gap-3 px-8 py-3.5 rounded-2xl font-black text-sm sm:text-base uppercase tracking-wider text-white shadow-2xl transition-all duration-300 hover:scale-105 border border-white/25 cursor-pointer h-16"

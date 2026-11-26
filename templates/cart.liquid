@@ -65,7 +65,7 @@
 
   <!-- Cart Content Grid -->
   <div id="cart-content" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <!-- SOL: Ürünler Listesi (8 Cols) -->
+    <!-- LEFT: product list (8 cols) -->
     <div
       class="lg:col-span-8 rounded-3xl border-2 shadow-2xl overflow-hidden backdrop-blur-xl"
       style="
@@ -108,7 +108,7 @@
       </div>
     </div>
 
-    <!-- SAĞ: Sipariş Özeti (4 Cols) -->
+    <!-- RIGHT: order summary (4 cols) -->
     <div class="lg:col-span-4 space-y-6">
       <div
         class="rounded-3xl border-2 shadow-2xl p-6 sm:p-7 backdrop-blur-xl sticky top-24"
@@ -179,7 +179,7 @@
           </div>
         </div>
 
-        <!-- Fiyat Satırları -->
+        <!-- Price rows -->
         <div class="space-y-3 mb-6 text-sm">
           <div class="flex items-center justify-between font-medium text-gray-400">
             <span>Ara Toplam</span>
@@ -191,7 +191,7 @@
           </div>
         </div>
 
-        <!-- Toplam -->
+        <!-- Total -->
         <div class="border-t pt-5 mb-7" style="border-color: rgba(255, 255, 255, 0.08);">
           <div class="flex items-center justify-between">
             <span class="text-base font-bold text-gray-300">Genel Toplam</span>
@@ -199,7 +199,7 @@
           </div>
         </div>
 
-        <!-- Siparişi Tamamla Butonu -->
+        <!-- Complete order button -->
         <button
           onclick="purchase()"
           id="purchaseBtn"
@@ -367,7 +367,7 @@
             ${priceHtml}
           </div>
           <div class="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-            <!-- Adet Sayacı -->
+            <!-- Quantity counter -->
             <div class="flex items-center gap-1.5 p-1 rounded-xl border shadow-inner"
                  style="background: rgba(14, 9, 20, 0.8); border-color: rgba(255, 255, 255, 0.1);">
               <button onclick="updateQty('${product.id}', ${product.quantity - 1})"
@@ -381,12 +381,12 @@
               </button>
             </div>
             
-            <!-- Tutar -->
+            <!-- Amount -->
             <div class="w-20 sm:w-24 text-right hidden sm:block">
               <span class="font-black text-primary text-base sm:text-lg">${Math.max(0, lineTotal).toFixed(2)} ₺</span>
             </div>
 
-            <!-- Sil Butonu -->
+            <!-- Delete button -->
             <button onclick="removeFromCart('${product.id}')"
                     class="w-9 h-9 flex items-center justify-center rounded-xl border border-red-500/20 text-red-400 hover:text-red-300 hover:bg-red-500/15 transition-colors cursor-pointer"
                     title="Ürünü Sil">

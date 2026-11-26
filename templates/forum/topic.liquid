@@ -26,9 +26,9 @@
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <!-- SOL / ORTA: Mesajlar Listesi (8 Cols) -->
+    <!-- LEFT / CENTER: message list (8 cols) -->
     <main class="lg:col-span-8 space-y-6">
-      <!-- Konu Başlık Kartı -->
+      <!-- Topic title card -->
       <div
         class="rounded-3xl border-2 shadow-2xl p-6 sm:p-8 backdrop-blur-xl"
         style="
@@ -57,7 +57,7 @@
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight" style="color: #ffffff !important;">{{ forumTopic.title }}</h1>
       </div>
 
-      <!-- OP (İlk Mesaj / Konu Sahibi) -->
+      <!-- OP (first message / topic owner) -->
       <div
         class="rounded-3xl border-2 shadow-2xl overflow-hidden flex flex-col md:flex-row backdrop-blur-xl"
         style="
@@ -65,7 +65,7 @@
           border-color: rgba(var(--color-primary-rgb, 124, 58, 237), 0.25);
         "
       >
-        <!-- Yazar Kolonu -->
+        <!-- Author column -->
         <div
           class="w-full md:w-56 p-6 flex flex-col items-center text-center flex-shrink-0 border-b md:border-b-0 md:border-r"
           style="background: rgba(14, 9, 20, 0.7); border-color: rgba(255, 255, 255, 0.08);"
@@ -81,7 +81,7 @@
           </div>
         </div>
         
-        <!-- İçerik Kolonu -->
+        <!-- Content column -->
         <div class="flex-1 flex flex-col min-w-0 p-6 md:p-8">
           <div class="prose prose-invert prose-sm md:prose-base max-w-none text-gray-200 break-words lexical-content flex-1 leading-relaxed">
             {{ forumTopic.content | lexical_html }}
@@ -97,7 +97,7 @@
         </div>
       </div>
 
-      <!-- Yanıtlar -->
+      <!-- Replies -->
       {% if forumTopic.messages and forumTopic.messages.size > 0 %}
         <div class="space-y-6 mt-8">
           {% for message in forumTopic.messages %}
@@ -108,7 +108,7 @@
                 border-color: rgba(var(--color-primary-rgb, 124, 58, 237), 0.20);
               "
             >
-              <!-- Yazar Kolonu -->
+              <!-- Author column -->
               <div
                 class="w-full md:w-56 p-6 flex flex-col items-center text-center flex-shrink-0 border-b md:border-b-0 md:border-r"
                 style="background: rgba(14, 9, 20, 0.7); border-color: rgba(255, 255, 255, 0.08);"
@@ -121,7 +121,7 @@
                 </div>
               </div>
               
-              <!-- İçerik Kolonu -->
+              <!-- Content column -->
               <div class="flex-1 flex flex-col min-w-0 p-6 md:p-8">
                 <div class="prose prose-invert prose-sm max-w-none text-gray-200 break-words lexical-content flex-1 leading-relaxed">
                   {{ message.content | lexical_html }}
@@ -140,7 +140,7 @@
         </div>
       {% endif %}
 
-      <!-- Cevap Yazma Formu -->
+      <!-- Reply form -->
       {% if forumTopic.isLocked %}
         <div
           class="rounded-3xl border-2 p-8 text-center mt-8 backdrop-blur-xl shadow-2xl"
@@ -248,7 +248,7 @@
       {% endif %}
     </main>
 
-    <!-- SAĞ: Konu İstatistikleri (4 Cols) -->
+    <!-- RIGHT: topic statistics (4 cols) -->
     <aside class="lg:col-span-4 space-y-6">
       <div
         class="rounded-3xl border-2 shadow-2xl p-6 sticky top-24 backdrop-blur-xl"
@@ -328,7 +328,7 @@
     namespace: 'ForumReply',
     theme: myTheme,
     onError: (error) => {
-      console.error('Lexical Hatası:', error);
+      console.error('Lexical error:', error);
     },
   };
 
