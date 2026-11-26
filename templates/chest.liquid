@@ -31,7 +31,7 @@
     {% assign available = total | minus: used %}
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <!-- SOL: Eşyalar Container (8 Cols) -->
+      <!-- LEFT: items container (8 cols) -->
       <div
         class="lg:col-span-8 rounded-3xl border-2 shadow-2xl p-6 sm:p-8 backdrop-blur-xl"
         style="
@@ -157,7 +157,7 @@
         {% endif %}
       </div>
 
-      <!-- SAĞ: İstatistikler Sidebar (4 Cols) -->
+      <!-- RIGHT: statistics sidebar (4 cols) -->
       <div class="lg:col-span-4 space-y-6">
         <div
           class="rounded-3xl border-2 shadow-2xl p-6 sm:p-7 backdrop-blur-xl sticky top-24"
@@ -176,7 +176,7 @@
           </h2>
 
           <div class="space-y-4">
-            <!-- Toplam Eşya -->
+            <!-- Total items -->
             <div
               class="rounded-2xl p-4 flex items-center justify-between border-2 transition-all hover:scale-[1.02]"
               style="background: rgba(124, 58, 237, 0.12); border-color: rgba(124, 58, 237, 0.35);"
@@ -192,7 +192,7 @@
               </div>
             </div>
 
-            <!-- Kullanılabilir -->
+            <!-- Available -->
             <div
               class="rounded-2xl p-4 flex items-center justify-between border-2 transition-all hover:scale-[1.02]"
               style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35);"
@@ -208,7 +208,7 @@
               </div>
             </div>
 
-            <!-- Kullanılmış -->
+            <!-- Used -->
             <div
               class="rounded-2xl p-4 flex items-center justify-between border-2 transition-all hover:scale-[1.02]"
               style="background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1);"

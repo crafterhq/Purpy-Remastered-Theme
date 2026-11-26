@@ -4,9 +4,9 @@
 {% if customer %}
   <div class="w-full max-w-[1350px] mx-auto px-4 sm:px-6 py-6 sm:py-10 min-h-[60vh]">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <!-- SOL SÜTUN: Profil Bilgileri ve Navigasyon (4 Cols) -->
+      <!-- LEFT COLUMN: profile info and navigation (4 cols) -->
       <div class="lg:col-span-4 space-y-6">
-        <!-- Profil Kartı -->
+        <!-- Profile card -->
         <div
           class="rounded-3xl p-8 border-2 shadow-2xl relative overflow-hidden flex flex-col items-center text-center backdrop-blur-xl"
           style="
@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <!-- Navigasyon -->
+        <!-- Navigation -->
         <div
           class="rounded-3xl p-6 border-2 shadow-2xl backdrop-blur-xl"
           style="
@@ -98,9 +98,9 @@
         </div>
       </div>
 
-      <!-- SAĞ SÜTUN: Ayarlar İçeriği (8 Cols) -->
+      <!-- RIGHT COLUMN: settings content (8 cols) -->
       <div class="lg:col-span-8 space-y-6">
-        <!-- SEKME BUTONLARI -->
+        <!-- TAB BUTTONS -->
         <div class="flex items-center gap-3 p-2 rounded-2xl border-2 backdrop-blur-xl overflow-x-auto"
              style="background: linear-gradient(135deg, rgba(26, 16, 32, 0.95), rgba(18, 10, 24, 0.95)); border-color: rgba(var(--color-primary-rgb, 124, 58, 237), 0.25);">
           <button
@@ -132,7 +132,7 @@
           </button>
         </div>
 
-        <!-- TAB 1: GENEL AYARLAR -->
+        <!-- TAB 1: GENERAL SETTINGS -->
         <div
           id="tab-general"
           class="settings-content rounded-3xl p-6 sm:p-8 border-2 shadow-2xl backdrop-blur-xl"
@@ -148,7 +148,7 @@
             <span>Hesap Bilgileri</span>
           </h2>
 
-          <!-- Başarı Mesajı -->
+          <!-- Success message -->
           <div
             id="settings-success"
             class="hidden mb-6 p-4 rounded-2xl border flex items-center gap-3"
@@ -158,7 +158,7 @@
             <span class="text-xs sm:text-sm font-bold">Değişiklikleriniz başarıyla kaydedildi!</span>
           </div>
           
-          <!-- Hata Mesajı -->
+          <!-- Error message -->
           <div
             id="settings-error"
             class="hidden mb-6 p-4 rounded-2xl border flex items-center gap-3"
@@ -237,7 +237,7 @@
           </form>
         </div>
 
-        <!-- TAB 2: DISCORD HESABI -->
+        <!-- TAB 2: DISCORD ACCOUNT -->
         <div
           id="tab-discord"
           class="settings-content hidden rounded-3xl p-6 sm:p-8 border-2 shadow-2xl backdrop-blur-xl"
@@ -283,7 +283,7 @@
           </div>
         </div>
 
-        <!-- TAB 3: 2FA GÜVENLİK -->
+        <!-- TAB 3: 2FA SECURITY -->
         <div
           id="tab-2fa"
           class="settings-content hidden rounded-3xl p-6 sm:p-8 border-2 shadow-2xl backdrop-blur-xl"

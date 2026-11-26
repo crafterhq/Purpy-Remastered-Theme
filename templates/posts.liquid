@@ -36,7 +36,7 @@
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
     <!-- SOL: Filtreler Sidebar (3 Cols) -->
     <aside class="lg:col-span-3 space-y-6">
-      <!-- Filtreler Kartı -->
+      <!-- Filters card -->
       <div
         class="rounded-3xl border-2 shadow-2xl p-6 backdrop-blur-xl space-y-5"
         style="
@@ -51,7 +51,7 @@
           <span>Filtreler</span>
         </h3>
 
-        <!-- Arama -->
+        <!-- Search -->
         <div>
           <label class="text-[10px] font-black text-purple-300 uppercase tracking-wider mb-2 block">Haber Ara</label>
           <div class="relative">
@@ -76,7 +76,7 @@
 
         <div class="border-t" style="border-color: rgba(255, 255, 255, 0.08);"></div>
 
-        <!-- Gönderi Tipi -->
+        <!-- Post type -->
         <div>
           <label class="text-[10px] font-black text-purple-300 uppercase tracking-wider mb-2 block">Gönderi Tipi</label>
           <div class="space-y-1.5 flex flex-col" id="typeFilters">
@@ -128,7 +128,7 @@
 
         <div class="border-t" style="border-color: rgba(255, 255, 255, 0.08);"></div>
 
-        <!-- Sıralama -->
+        <!-- Sorting -->
         <div>
           <label class="text-[10px] font-black text-purple-300 uppercase tracking-wider mb-2 block">Sıralama</label>
           <div class="space-y-1.5 flex flex-col" id="sortFilters">
@@ -164,7 +164,7 @@
         </div>
       </div>
 
-      <!-- İstatistikler -->
+      <!-- Statistics -->
       <div
         class="rounded-3xl border-2 shadow-2xl p-5 backdrop-blur-xl"
         style="
@@ -180,7 +180,7 @@
       </div>
     </aside>
 
-    <!-- SAĞ: Gönderiler Grid (9 Cols) -->
+    <!-- RIGHT: posts grid (9 cols) -->
     <div class="lg:col-span-9">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="postsGrid">
         {% if posts.size > 0 %}
@@ -271,7 +271,7 @@
                   {% endif %}
                 </p>
 
-                <!-- Alt Sayaçlar & Ok -->
+                <!-- Bottom counters & arrow -->
                 <div class="mt-4 pt-3.5 border-t flex items-center justify-between text-[11px] font-bold text-gray-400" style="border-color: rgba(255, 255, 255, 0.08);">
                   <div class="flex items-center gap-1.5">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
@@ -412,7 +412,7 @@
         }
       } catch (error) {
         if (error.name === 'AbortError') return;
-        console.error('Gönderiler yüklenirken hata oluştu:', error);
+        console.error('Error while loading posts:', error);
       } finally {
         if (!currentFetchController || currentFetchController.signal.aborted === false) {
           postsGrid.style.opacity = '1';

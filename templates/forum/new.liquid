@@ -23,7 +23,7 @@
 
   {% if customer %}
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <!-- SOL: Kullanıcı Bilgisi & Kurallar (4 Cols) -->
+      <!-- LEFT: user info & rules (4 cols) -->
       <aside class="lg:col-span-4 space-y-6">
         <!-- User Info -->
         <div
@@ -73,7 +73,7 @@
         </div>
       </aside>
 
-      <!-- SAĞ: Yeni Konu Formu (8 Cols) -->
+      <!-- RIGHT: new topic form (8 cols) -->
       <main class="lg:col-span-8">
         <div
           class="rounded-3xl border-2 shadow-2xl overflow-hidden backdrop-blur-xl"
@@ -220,7 +220,7 @@
         namespace: 'ForumNewTopic',
         theme: myTheme,
         onError: (error) => {
-          console.error('Lexical Hatası:', error);
+          console.error('Lexical error:', error);
         },
       };
 

@@ -62,7 +62,7 @@
     ></div>
   </div>
 
-  <!-- ÜRÜNLER ALANI -->
+  <!-- PRODUCTS AREA -->
   {% if products and products.size > 0 %}
     {% if category.type == 'listed_products' %}
       <!-- ============================================================
@@ -70,17 +70,17 @@
            ============================================================ -->
       <div class="w-full overflow-x-auto pb-6">
         <div class="min-w-[800px]">
-          <!-- Ürün Başlık Kartları Grid -->
+          <!-- Product header cards grid -->
           <div
             class="grid gap-4 mb-6"
             style="grid-template-columns: 250px repeat({{ products.size }}, minmax(180px, 1fr));"
           >
-            <!-- Sol Boş Köşe -->
+            <!-- Empty left corner -->
             <div class="p-4 flex items-end">
               <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Ürün Karşılaştırma</span>
             </div>
 
-            <!-- Ürün Kartları -->
+            <!-- Product cards -->
             {% for product in products %}
               <div
                 class="rounded-2xl p-5 flex flex-col items-center gap-3 border-2 shadow-xl relative transition-all duration-300 hover:border-primary/60"
@@ -89,7 +89,7 @@
                   border-color: rgba(var(--color-primary-rgb, 124, 58, 237), 0.25);
                 "
               >
-                <!-- Ürün Resmi -->
+                <!-- Product image -->
                 <a href="/store/{{ server.slug }}/{{ category.slug }}/{{ product.slug }}" class="relative w-24 h-24 rounded-xl overflow-hidden flex items-center justify-center p-2"
                    style="background: rgba(14, 9, 20, 0.8);">
                   {% if product.image != blank %}
@@ -101,24 +101,24 @@
                   {% endif %}
                 </a>
 
-                <!-- Ürün İsmi -->
+                <!-- Product name -->
                 <a href="/store/{{ server.slug }}/{{ category.slug }}/{{ product.slug }}" class="text-center">
                   <h3 class="font-bold text-base text-white hover:text-primary transition-colors line-clamp-2" style="color: #ffffff !important;">
                     {{ product.name }}
                   </h3>
                 </a>
 
-                <!-- Ürün Açıklaması -->
+                <!-- Product description -->
                 <p class="text-xs text-gray-400 text-center line-clamp-2">
                   {{ product.description | lexical_text | default: product.description | truncate: 80 }}
                 </p>
 
-                <!-- Fiyat -->
+                <!-- Price -->
                 <div class="text-xl font-black" style="color: var(--color-primary);">
                   ₺{{ product.price }}
                 </div>
 
-                <!-- Sepete Ekle Butonu -->
+                <!-- Add to cart button -->
                 <button
                   onclick="handleAddToCart('{{ product.id }}', '{{ product.name | escape }}', '{{ product.price }}', '{{ product.image }}')"
                   {% if product.stock != null and product.stock == 0 %}disabled{% endif %}
@@ -135,7 +135,7 @@
             {% endfor %}
           </div>
 
-          <!-- Özellikler Tablosu (Addons & Features) -->
+          <!-- Features table (addons & features) -->
           {% if category.addons and category.addons.size > 0 %}
             <div
               class="rounded-2xl border-2 overflow-hidden shadow-2xl"
@@ -146,14 +146,14 @@
             >
               {% for addon in category.addons %}
                 <div class="border-b last:border-b-0" style="border-color: rgba(255, 255, 255, 0.08);">
-                  <!-- Addon Başlığı -->
+                  <!-- Addon title -->
                   <div class="p-4 border-b" style="background: rgba(var(--color-primary-rgb, 124, 58, 237), 0.15); border-color: rgba(255, 255, 255, 0.08);">
                     <h4 class="font-black text-sm sm:text-base uppercase tracking-wider text-white" style="color: #ffffff !important;">
                       {{ addon.title }}
                     </h4>
                   </div>
 
-                  <!-- Özellik Satırları -->
+                  <!-- Feature rows -->
                   {% for feature in addon.features %}
                     <div
                       class="grid gap-4 items-center border-b last:border-b-0 hover:bg-white/[0.02] transition-colors"
@@ -162,7 +162,7 @@
                         border-color: rgba(255, 255, 255, 0.06);
                       "
                     >
-                      <!-- Özellik İsmi ve Info Tooltip -->
+                      <!-- Feature name and info tooltip -->
                       <div class="p-4 flex items-center gap-2 border-r" style="border-color: rgba(255, 255, 255, 0.06);">
                         <span class="font-medium text-xs sm:text-sm text-gray-200" style="color: #e2e8f0 !important;">
                           {{ feature.title }}
@@ -179,7 +179,7 @@
                         {% endif %}
                       </div>
 
-                      <!-- Her Ürün İçin Özellik Değeri (Check / X / CustomValue) -->
+                      <!-- Feature value for each product (check / X / custom value) -->
                       {% for product in products %}
                         {% assign is_included = false %}
                         {% assign custom_val = '' %}
